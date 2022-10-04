@@ -1,0 +1,73 @@
+server:
+  port: 8080
+
+  servlet:
+    encoding:
+      charset: UTF-8
+spring:
+
+  application:
+    name: ruiji
+
+  #数据库配置
+  datasource:
+    #druid数据库连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+  #      邮箱配置
+  mail:
+    default-encoding: utf-8
+    password: LFDOODGDVBKPPWUO
+    username: xiaozhi2000@163.com
+    # 服务器ip
+    host: smtp.163.com
+  # redis配置
+  redis:
+    # redis服务器地址
+    host: www.xiaozhi.love
+    password: 123456
+    port: 6379
+    #redis数据库索引
+    database: 0
+    #连接超时时间（毫秒）
+    timeout: 1800000
+    lettuce:
+      pool:
+        #最大阻塞等待时间(负数表示没限制)
+        max-wait: -1
+        #连接池最大连接数（使用负值表示没有限制）
+        max-active: 8
+        #连接池中的最大空闲连接
+        max-idle: 5
+        #连接池中的最大空闲连接
+        min-idle: 0
+
+#mybatis配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    call-setters-on-nulls: true
+  global-config:
+    db-config:
+      id-type: assign_id
+  # 映射文件路径
+  mapper-locations: classpath:/mapper/*.xml
+
+
+
+
+
+#自定义变量
+image-path:
+  path: C:\Users\20232\Desktop\瑞吉外卖\SpringBoot_RuiJi\src\main\resources\image\
+
+email-path:
+  mode-path: email/email.html
+
+
+
+
